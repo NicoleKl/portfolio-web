@@ -1,11 +1,11 @@
 .heroSection {
+    max-height: 80vh;
     padding: 300px 0;
     color: var(--contrastYellow);
     background-color: var(--dark);
 }
 
 .heroContainer {
-    width: 70vw;
     max-width: 800px;
     margin: 0 auto;
 }

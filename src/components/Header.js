@@ -31,6 +31,7 @@ const Header = () => {
         const { offsetBottom, offsetTop } = getDimensions(section);
         return scrollPosition > offsetTop && scrollPosition <= offsetBottom
       });
+      
       selected && setActiveSection(selected.id)
     };
 

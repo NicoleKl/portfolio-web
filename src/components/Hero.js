@@ -6,7 +6,7 @@ const Hero = () => {
     <div id='home' className="section heroSection">
       <div className="container heroContainer">
         <div className="helloText">
-          <p>hello.</p>
+          <span>hello.</span>
           <div className="yellowLine"></div>
         </div>
       </div>
