@@ -26,8 +26,10 @@ const Projects = () => {
             Projects
             </h1>
               <div className="projectsGrid">
-                  {myProjects.map((project) => {
-                      return (<ProjectCard link={project.link}
+                  {myProjects.map((project, i) => {
+                      return (<ProjectCard
+                          key={i}
+                          link={project.link}
                           image={project.image}
                           name={project.name}
                           description={project.description}

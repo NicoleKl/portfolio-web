@@ -10,9 +10,13 @@ const Contacts = () => {
             <div className="contactsSection_container container">
                 <h1 className="contactsSection_header">Get in touch</h1>
                 <div className="contactsGrid">
-                    {contacts.map((contact) => {
+                    {contacts.map((contact, i) => {
                         return (
-                            <ContactIcon type={contact} copy={contact !== 'linkedin'} />
+                            <ContactIcon
+                                key={i}
+                                type={contact}
+                                copy={contact !== 'linkedin'}
+                            />
                         );
                     })}
                 </div>

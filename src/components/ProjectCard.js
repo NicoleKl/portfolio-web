@@ -13,8 +13,8 @@ const ProjectCard = ({link, image, name, description, technologies}) => {
         <h3 className="projectCard_name">{name}</h3>
         <p className="projectCard_desc">{description}</p>
         <p className="projectCard_tech" >
-          {technologies.map(tech => {
-            return <span>#{tech} </span>;
+          {technologies.map((tech, i) => {
+            return <span key={i}>#{tech} </span>;
           })}
         </p>
 

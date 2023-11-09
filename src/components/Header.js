@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import NavLink from './NavLink';
 import './css/Header.css';
+
+const getDimensions = (el) => {
+  const { height } = el.getBoundingClientRect();
+  const offsetTop = el.offsetTop;
+  const offsetBottom = offsetTop + height;
+  return {
+    height,
+    offsetTop,
+    offsetBottom,
+  };
+};
+
+const scrollTo = (id) => {
+  const el = document.getElementById(id);
+  el.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+}
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    el.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-  }
-
   const sections = [...document.querySelectorAll('div.section')];
+  const sectionNames = ['home', 'about', 'projects', 'contacts'];
 
-  const sectionNames = sections.map((section) => section.id);
-  const getDimensions = (ele) => {
-    const { height } = ele.getBoundingClientRect();
-    const offsetTop = ele.offsetTop;
-    const offsetBottom = offsetTop + height;
-    return {
-      height,
-      offsetTop,
-      offsetBottom,
-    };
-  };
+  const handleScroll = useCallback(() => {
+    const scrollPosition = window.scrollY + window.innerHeight - 150;
+    const selected = sections.find((section) => {
+      const { offsetBottom, offsetTop } = getDimensions(section);
+      return scrollPosition > offsetTop && scrollPosition <= offsetBottom;
+    });
+
+    selected && setActiveSection(selected.id);
+  }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight - 150;
-      const selected = sections.find((section) => {
-        const { offsetBottom, offsetTop } = getDimensions(section);
-        return scrollPosition > offsetTop && scrollPosition <= offsetBottom
-      });
-      
-      selected && setActiveSection(selected.id)
-    };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -46,8 +46,8 @@ const Header = () => {
       <div className="header_container">
         <nav>
           <ul className="header_menu">
-            {sectionNames.map((section) =>
-              <NavLink sectionName={section} isActive={activeSection === section} handleClick={scrollTo} />
+            {sectionNames.map((section, i) =>
+              <NavLink key={i} sectionName={section} isActive={activeSection === section} handleClick={scrollTo} />
             )}
           </ul>
         </nav>
