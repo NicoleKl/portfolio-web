@@ -1,0 +1,82 @@
+.projectCard {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 650px;
+    border-radius: 10px;
+    text-align: left;
+    color: white;
+    border: 1px solid white;
+}
+.projectCard:hover {
+    box-shadow:rgba(97, 97, 97, 0.8) 0px 2px 5px 0px;
+}
+
+.projectCard_imageContainer {
+    max-width: 250px;
+}
+
+.projectCard_textContainer {
+    margin-left: 15px;
+    height: 100%;
+}
+
+.projectCard_image {
+    border-radius: 5px;
+    transition: all 500ms linear;
+}
+
+.projectCard_tech {
+    font-weight: bold;
+    color: var(--contrastYellow);
+}
+
+.projectCard_name {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.projectCard_desc {
+    margin: 5px 0 10px;
+    font-size: 16px;
+}
+
+.projectCard_buttonsContainer {
+    display: flex;
+    position: relative;
+    bottom: -5px;
+    visibility: hidden;
+    margin: 10px 0;
+}
+
+.projectCard:hover .projectCard_buttonsContainer {
+    visibility: visible;
+    bottom: 0px;
+    transition: all 500ms linear;
+}
+
+.projectCard_button {
+    display: block;
+    width: 100px;
+    padding: 3px 10px;
+    margin-top: 5px;
+    margin-right: 10px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.viewBtn {
+    background-color: transparent;
+}
+
+.githubBtn {
+    background-color: transparent;
+}
+.projectCard_button:hover {
+    background-color: black;
+    border: 1px solid var(--contrastYellow);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+

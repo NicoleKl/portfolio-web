@@ -1,0 +1,39 @@
+.aboutSection {
+    background-color: white;
+    padding: 100px 0;
+    color: var(--dark);
+}
+
+.aboutSection_header {
+    font-size: 50px;
+    color: var(--dark);
+    text-align: center;
+}
+
+.aboutSection_header2 {
+    margin-top: 20px;
+    font-size: 30px;    
+}
+
+.aboutSection_highlights {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.highlight_text {
+    margin-top: 20px;
+}
+
+.resumeBtn {
+    padding: 15px;
+    border: 1px solid var(--dark);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.resumeBtn:hover {
+    background-color: var(--dark);
+    color: var(--contrastYellow);
+}

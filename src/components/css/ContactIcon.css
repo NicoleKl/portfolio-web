@@ -1,0 +1,32 @@
+.contactIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 100%;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.contactIcon:last-child {
+    margin-right: 0;
+}
+.contactIcon:hover {
+    background-color: black;
+}
+.contactIcon_active {
+    background-color: rgba(1, 1, 1, 0.8);
+}
+.contactIcon_active:hover {
+    box-shadow:none;
+}
+
+.contactIcon > p {
+    font-size: 14px;
+    color: white;
+}
+
+.contactIcon:hover > *  {
+    color: #FFD523;
+}

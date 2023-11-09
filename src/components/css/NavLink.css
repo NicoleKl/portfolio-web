@@ -1,0 +1,15 @@
+.header_link {
+    font-size: 30px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.link_active { 
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.header_link:hover {
+    color: var(--lightGray);
+}
