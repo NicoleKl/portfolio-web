@@ -27,7 +27,7 @@ const About = () => {
                         <p className="highlight_text">proactive, problem-solving mindset</p>
                     </div>
                 </div>
-                <a className="resumeBtn" target="_blank" href='https://drive.google.com/file/d/1KTS8EE_JgDqJsnFTGjfN1osr-xVrXkup/view?usp=drive_link'>more details in my resume</a>
+                <a className="resumeBtn" target="_blank" href="https://drive.google.com/file/d/1zs8XQ5DoDGi24aM8FqP_4XFPnQ-70LPK/view?usp=sharing">more details in my resume</a>
 
             </div>
         </div>
