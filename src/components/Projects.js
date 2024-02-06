@@ -4,23 +4,33 @@ import './css/Projects.css'
 
 const Projects = () => {
     const myProjects = [{
-            link: "https://original-snake-game.netlify.app",
-            name: "Classic snake 2d game",
+            link: "https://forecastweatherhere.netlify.app/",
+            name: "Weather App",
+            description: "Weather forecast in your city (use search or your location)",
+            technologies: ["React", "MaterialUI", "APIs"],
+            image: process.env.PUBLIC_URL + './images/weatherApp-img.jpeg',
+            gitHub: "https://github.com/NicoleKl/weather-app"
+        },
+        {
+            link: "https://infinitygalleryhere.netlify.app/",
+            name: "Infinity Gallery",
+            description: "Photo gallery with endless scroll",
+            technologies: ["React"],
+            image: process.env.PUBLIC_URL + './images/gallery-img.jpg',
+            gitHub: "https://github.com/NicoleKl/infinityScrollGallery"
+
+        },
+        {
+            link: "https://snakegamehere.netlify.app",
+            name: "Classic Snake Game",
             description: "Childhood memories come alive",
             technologies: ["HTML", "SCSS", "JavaScript"],
             image: process.env.PUBLIC_URL + './images/snakeGame-img.jpg',
+            gitHub: "https://github.com/NicoleKl/snakeGame"
         },
-        {
-            link: "https://gallery-with-infinite-scroll.netlify.app",
-            name: "Infinite Scroll Gallery",
-            description: "Scroll endlessly looking at the photos",
-            technologies: ["React"],
-            image: process.env.PUBLIC_URL + './images/gallery-img.jpg',
-
-        }
     ]
   return (
-      <div id="projects" className="section projectsSection">
+      <a id="projects" className="section projectsSection">
         <div className="container">
             <h1 className="projectsSection_header">
             Projects
@@ -34,12 +44,13 @@ const Projects = () => {
                           name={project.name}
                           description={project.description}
                           technologies={project.technologies}
+                          gitHub={project.gitHub}
                       />)
                   })}
             </div>
             
         </div>
-    </div>
+    </a>
   );
 };
 

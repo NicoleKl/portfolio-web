@@ -1,10 +1,10 @@
 import React from "react";
 import './css/ProjectCard.css'
 
-const ProjectCard = ({link, image, name, description, technologies}) => {
+const ProjectCard = ({link, image, name, description, technologies, gitHub}) => {
 
   return (
-    <a className=" projectCard" href={link} target="_blank">
+    <div className=" projectCard" href={link} target="_blank">
       <div className="projectCard_imageContainer">
         <img className="projectCard_image" src={image} />
       </div>
@@ -20,10 +20,10 @@ const ProjectCard = ({link, image, name, description, technologies}) => {
 
         <div className="projectCard_buttonsContainer">
           <a className="projectCard_button viewBtn" href={link} target="_blank">View</a>
-          <a className="projectCard_button githubBtn" href={link} target="_blank">GitHub</a>
+          <a className="projectCard_button githubBtn" href={gitHub} target="_blank">GitHub</a>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
