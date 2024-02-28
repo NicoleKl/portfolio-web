@@ -14,8 +14,11 @@ const getDimensions = (el) => {
 };
 
 const scrollTo = (id) => {
-  const el = document.getElementById(id);
-  el.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  const yOffset = -10; 
+  const element = document.getElementById(id);
+  const y = element.getBoundingClientRect().top + window.pageYOffset;
+
+  window.scrollTo({top: y, behavior: 'smooth'});
 }
 
 const Header = () => {
@@ -25,10 +28,9 @@ const Header = () => {
   const sectionNames = ['home', 'about', 'projects', 'contacts'];
 
   const handleScroll = useCallback(() => {
-    const scrollPosition = window.scrollY + window.innerHeight - 150;
-    const selected = sections.find((section) => {
-      const { offsetBottom, offsetTop } = getDimensions(section);
-      return scrollPosition > offsetTop && scrollPosition <= offsetBottom;
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const selected = sections.find((e) => {
+      return e.getBoundingClientRect().top>=0
     });
 
     selected && setActiveSection(selected.id);

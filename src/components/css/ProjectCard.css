@@ -7,7 +7,9 @@
     text-align: left;
     color: white;
     border: 1px solid white;
+    cursor: pointer;
 }
+
 .projectCard:hover {
     box-shadow:rgba(97, 97, 97, 0.8) 0px 2px 5px 0px;
 }
